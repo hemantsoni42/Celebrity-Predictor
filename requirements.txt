@@ -6,4 +6,3 @@ scikit-learn
 streamlit==1.19.0
 tensorflow==2.11.0
 tensorflow_intel
-tqdm==4.65.0
