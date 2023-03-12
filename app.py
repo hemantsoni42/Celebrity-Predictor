@@ -1,6 +1,6 @@
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
-from tensorflow.keras.applications.inception_v3 import InceptionV3
-from tensorflow.keras.applications.inception_v3 import preprocess_input as pI_V3
+# from tensorflow.keras.applications.inception_v3 import InceptionV3
+# from tensorflow.keras.applications.inception_v3 import preprocess_input as pI_V3
 # from tensorflow.keras.models import Model
 import pickle
 from sklearn.preprocessing import normalize
@@ -26,10 +26,10 @@ st.set_page_config(page_title="Celebrity Predictor", page_icon=":smiley:", layou
 
 
 detector = MTCNN()
-model_V3 = InceptionV3(include_top=False, input_shape=(224, 224, 3), pooling='avg')
+# model_V3 = InceptionV3(include_top=False, input_shape=(224, 224, 3), pooling='avg')
 model_50 = ResNet50(include_top=False, input_shape=(224, 224, 3), pooling='avg')
-feature_list_V3 = pickle.load(open('embedding_V3.pkl', 'rb'))
-filenames_V3 = pickle.load(open('merged_filenames_V3.pkl', 'rb'))
+# feature_list_V3 = pickle.load(open('embedding_V3.pkl', 'rb'))
+# filenames_V3 = pickle.load(open('merged_filenames_V3.pkl', 'rb'))
 feature_list_50 = pickle.load(open('embedding.pkl', 'rb'))
 filenames_50 = pickle.load(open('merged_filenames_50.pkl', 'rb'))
 
@@ -443,13 +443,13 @@ if uploaded_image is not None and save_uploaded_image(uploaded_image):
         display_image = Image.open(uploaded_image)
         # extract the features_1
         with st.spinner('Extracting features...'):
-            features_1 = extract_features(os.path.join('uploads', uploaded_image.name), model_V3, detector,'V3')
+#             features_1 = extract_features(os.path.join('uploads', uploaded_image.name), model_V3, detector,'V3')
             features_2 = extract_features(os.path.join('uploads', uploaded_image.name), model_50, detector,'50')
 
-        if features_1 is None:
-            st.error("No face detected in the uploaded image.")
-        else:
-            main_code(features_1, 'V3')
+#         if features_1 is None:
+#             st.error("No face detected in the uploaded image.")
+#         else:
+#             main_code(features_1, 'V3')
 
         if features_2 is None:
             st.error("No face detected in the uploaded image.")
