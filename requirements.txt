@@ -1,6 +1,8 @@
-mtcnn==0.1.1
-numpy
-Pillow==9.4.0
-scikit_learn
-streamlit==1.20.0
-tensorflow==2.11.0
+mtcnn==0.1.1.post1
+numpy==1.22.3
+opencv-python==4.5.5.62
+Pillow==9.4.1
+scikit-learn==1.0.2
+streamlit==1.19.0
+
+pyopengl==3.1.5
