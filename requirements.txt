@@ -1,5 +1,5 @@
 mtcnn==0.1.1
-numpy==1.22.3
+numpy
 opencv-python==4.5.5.62
 Pillow==9.4.0
 scikit-learn==1.0.2
